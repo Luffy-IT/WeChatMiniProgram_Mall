@@ -1,0 +1,53 @@
+<view class="pyg_index">
+    <!-- 搜索框 开始 -->
+    <SearchInput></SearchInput>
+    <!-- 搜索框 结束 -->
+    <!-- 轮播图开始 -->
+    <view class="index_swiper">
+        <swiper autoplay indicator-dots circular>
+            <swiper-item 
+            wx:for="{{swiperList}}"
+            wx:key="id"
+            >
+                <navigator >
+                    <image mode="widthFix" src="{{item.picUrl}}"></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 轮播图结束 -->
+
+    <!-- 导航开始 -->
+    <view class="index_cate">
+        <navigator 
+        wx:for="{{catesList}}"
+        wx:key="key"
+        >
+        <image mode="widthFix" src="{{item.icon}}"></image>
+        <view >{{item.name}}</view>
+        </navigator>
+    </view>
+    <!-- 导航结束 -->
+
+    <!-- 产品楼层开始 -->
+    <view class="goods-container">
+        <navigator 
+        class="goods-box"
+        wx:for="{{floorList}}"
+        wx:key="id"
+        wx:for-item="item"
+        >
+        <view class="img-box">
+            <image mode="widthFix" src="{{item.pic}}"></image>
+        </view>
+        <view class="goods-title">{{item.name}}</view>
+        <view style='display:flex;'>
+            <view class="goods-price">¥ {{item.minPrice}}</view>
+            <view wx:if="{{item.originalPrice && item.originalPrice > 0}}" class="goods-price" style='color:#aaa;text-decoration:line-through'>
+            ¥ {{item.originalPrice}}
+            </view>
+        </view>
+        </navigator>
+    </view>
+    <!-- 产品楼层结束 -->
+</view>
