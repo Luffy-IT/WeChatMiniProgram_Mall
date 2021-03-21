@@ -1,0 +1,2 @@
+# WeChatMiniProgram_Mall
+微信小程序商城代码，通过学习B站的黑马程序员的小程序项目构建
